@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root{
+  --red: #d42834;
+  --grey: rgb(221, 219, 219);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
+/* header */
+
+.head{
+  width: 100%;
+  text-align: center;
+}
+
+.countdown{
+  display: flex;
+  gap: .25em;
+  margin: 1em auto;
+  width: fit-content;
+}
+
+
+/* Santa.css */
+
+.santa {
+  background:#5c069a;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  position: relative;
+  margin: 2em auto;
+}
+
+.santa .snow {
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 18px;
+  top: 44px;
+}
+
+
+.santa .snow:after {
+  width: 6px;
+  height: 6px;
+  content: "";
+  display: inline-block;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -14px;
+  left: 0px;
+}
+
+.santa .snow:before {
+  width: 4px;
+  height: 4px;
+  content: "";
+  display: inline-block;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -12px;
+  left: -11px;
+}
+
+.santa .hat {
+  width: 64px;
+  height: 31px;
+  border-radius: 200px 200px 0 0;
+  background: #d42834;
+  margin: 0 auto;
+  top: -11px;
+  position: relative;
+  left: 5px;
+  z-index:20;
+}
+
+.santa .hat:after {
+  width: 60px;
+  height: 15px;
+  border-radius: 20px;
+  content: "";
+  display: block;
+  background: white;
+  position: relative;
+  top: 22px;
+  left: -3px;
+}
+
+.santa .face {
+  width: 54px;
+  height: 57px;
+  background: white;
+  border-radius: 0px 0px 50px 50px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 20;
+  top: -6px;
+}
+
+.santa .face .eyes {
+  background:#f1ddd5;
+  width:45px;
+  height:15px;
+  margin:0 auto;
+  position:relative;
+  left:-1px;
+  text-align: center;
+  top:4px;
+  padding-top: 0px;
+}
+
+.santa .face .eyes:after, .righteye {
+  width: 8px;
+  height: 6px;
+  background: transparent;
+  box-shadow: 0px -2px #793623;
+  content: "";
+  display:inline-block;
+  margin:0 auto;
+  border-radius: 50%;
+}
+
+.santa .face .eyes:before, .lefteye {
+  width: 8px;
+  height: 6px;
+  background: transparent;
+  box-shadow: 0px -2px #793623;
+  content: "";
+  display:inline-block;
+  margin:0 auto;
+  border-radius: 50%;
+  margin-right:5px;
+}
+
+.santa .mouth {
+  background:#a31f2b;
+  border-radius:50%;
+  width:6px;
+  height:6px;
+  position:absolute;
+  bottom:20px;
+  right:17px;
+}
+
+.santa .body {
+  width: 93px;
+  height: 84px;
+  background: #d42834;
+  border-radius: 90px 90px 0px 0px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  text-align:center;
+  z-index:10;
+}
+
+.santa .body:after {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 68px;
+  z-index: 50;
+  content: "";
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.santa .body:before {
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 55px;
+  z-index: 50;
+  content: "";
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.santa .hat .hat-end {
+  width: 13px;
+  height: 32px;
+  content: "";
+  background: #d42834;
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  border-radius: 0px 11px 0px 0px;
+}
+
+.santa .hat .hat-end:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  content: "";
+  display: inline-block;
+  top: 30px;
+  position: absolute;
+  left: 0px;
+  z-index: 11;
+}
+
+.circles {
+  background: #a31f2b;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  z-index: 9;
+  position: absolute;
+  right: -6px;
+  top: 12px;
+}
+
+.circles:after {
+  background:white;
+  width:40px;
+  height:40px;
+  right:0;
+  top:50px;
+  content:"";
+  border-radius:50%;
+}
+
+.dirty-overflow {
+  overflow: hidden;
+  width: 120px;
+  height: 76px;
+  border-radius: 0px 0px 105px 105px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/** Santa page */ 
+
+.santa-box {
+  margin: 2em auto;
+  width: calc(100% - 4em);
+  max-width: 720px;
+  padding: 5em 2em 1em 2em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  position: relative;
+  overflow: hidden;
+}
+
+.santa-box .header{
+  position: absolute;
+  background-color: var(--red);
+  height: 4em;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+  color: white;
+}
+
+.santa-box .header input{
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0 0 .25em 0;
+  appearance: none;
+  border: none;
+  background-color: var(--red);
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+.show-message {
+  background-color: var(--grey);
+  padding: 1em;
+  margin-bottom: 2em;
+  animation: showMessage .5s linear;
+}
+
+@keyframes showMessage{
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+.input-container {
+  margin: 2em auto;
+  width: 100%;
+  text-align: center;
+}
+
+.input-container input{
+  padding: 1em 2em;
+  border-bottom-left-radius: 1em;
+  border-top-left-radius: 1em;
+  border: none;
+  border: 2px solid var(--grey);
+  border-right: 0px;
+}
+
+.input {
+  display: flex;
+  width: fit-content;
+  margin: 1em auto;
+}
+
+.input button{
+  background-color: var(--red);
+  appearance: none;
+  border: none;
+  color: white;
+  padding: 1em 2em;
+  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
+  cursor: pointer;
+}
+
+.button {
+  padding: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.participants-container {
+  margin-bottom: 20px;
+}
+
+.participants-list {
+  list-style: none;
+  padding: 0;
+}
+
+.participant-item {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+
+.users-box, .assignments-box{
+  margin: 2em auto;
+  width: calc(100% - 4em);
+  max-width: 720px;
+  padding: 2em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  animation: usersBox .4s linear;
+}
+
+@keyframes usersBox {
+
+  0%{
+    opacity: 0;
+
+  }
+
+  100%{
+    opacity: 1;
+  }
+  
+}
+
+.users-box ul{
+  margin: 2em;
+  max-width: 220px;
+  list-style: none;
+}
+
+.users-box ul li{
+  background-color: var(--grey);
+  margin: 1em;
+  width: fit-content;
+  padding: .5em 1em;
+  width: 100%;
+  animation: usersLi .2s linear;
+}
+
+@keyframes usersLi {
+
+  0%{
+    opacity: 0;
+    margin-left: 4em;
+
+  }
+
+  100%{
+    opacity: 1;
+    margin: 1em;
+  }
+  
+}
+
+.button-santa{
+  width: fit-content;
+  margin: 3em auto;
+  position: relative;
+}
+
+.button-santa button{
+  appearance: none;
+  border: none;
+  background-color: var(--red);
+  color: white;
+  font-size: 1rem;
+  padding: 1em 2em;
+  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.15);
+  border-radius: .75em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-santa .snow{
+  content: '';
+	display: block;
+	position: absolute;
+	bottom: -7px;
+	right: -3px;
+	height: 14px;
+  width: 60px;
+  background-color: #FCFCFC;
+  border-top-left-radius: 50%;
+}
+
+.button-santa .snow:nth-child(2) {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: -7px;
+	right: -3px;
+	height: 18px;
+  width: 35px;
+  background-color: #FCFCFC;
+  border-top-left-radius: 50%;
+  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.15);
+  
+}
+
+.button-santa .snow:nth-child(3) {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	right: -18px;
+	height: 18px;
+  width: 35px;
+  background-color: #FCFCFC;
+  border-top-left-radius: 50%;
+  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.15);
+}
+
+.button-santa .hat {
+  width: 64px;
+  height: 31px;
+  border-radius: 200px 200px 0 0;
+  background: #d42834;
+  margin: 0 auto;
+  top: -30px;
+  rotate: -20deg;
+  position: absolute;
+  left: -30px;
+  z-index: 2;
+}
+
+.button-santa .hat:after {
+  width: 60px;
+  height: 15px;
+  border-radius: 20px;
+  content: "";
+  display: block;
+  background: white;
+  position: relative;
+  top: 22px;
+  right: -6px;
+  border: 1px solid var(--grey);
+  border-top: 0px;
+
+}
+
+.button-santa .hat .hat-end {
+  width: 13px;
+  height: 32px;
+  content: "";
+  background: #d42834;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 15px;
+  border-radius: 13px 0px 0px 0px;
+}
+
+.button-santa .hat .hat-end:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: white;
+  content: "";
+  display: inline-block;
+  top: 20px;
+  position: absolute;
+  left: -1px;
+  z-index: 11;
+  border: 1px solid var(--grey);
+}
+
+.button-santa button:hover > .button-santa .hat{
+  rotate: -15px;
+}
+
+.assignments-box ul{
+  list-style: none;
+}
+
+.assignments-box ul li{
+  margin: .75em;
+  padding-bottom: .25em;
+  border-bottom: 4px dotted var(--red);
+  width: fit-content;
+
+}
+
+/* Snow CSS */
+
+#snowContainer{
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+  }
+  100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+  }
+}
+
+.snow {
+  position: absolute;
+    border-radius: 5px;
+    will-change: transform, opacity;
+    animation-timing-function: ease-in-out; 
+}
+
+
+/* footer */
+
+.footer{
+  width: 100%;
+  text-align: center;
+  margin: 4em auto 1em auto;
+  font-size: small;
+}
+
+.footer a{
+  color: #5c069a;
+  text-decoration: none;
+}
+
+.footer a:hover{
+  text-decoration: underline;
+}
