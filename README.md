@@ -31,11 +31,7 @@ To use this application, follow these steps:
 3. Add participants by providing their names.
 4. Click the "Assign Santas" button to randomly assign Secret Santas.
 
-## Installation
+## Dependencies
 
-To install and run the application locally, follow these steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone <https://github.com/Tarall0/secret-santa>
+- React
+- Canvas Confetti
