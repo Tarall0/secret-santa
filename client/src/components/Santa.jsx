@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import confetti from "https://esm.run/canvas-confetti@1";
 
 export default function Santa() {
   const [username, setUsername] = useState("");
@@ -9,6 +10,7 @@ export default function Santa() {
   const [groupName, setGroupName] = useState("Your Group's name");
   const [assignments, setAssignments] = useState([]);
   const [message, setMessage] = useState("");
+  const [timestamp, setTimestamp] = useState('');
 
 // Add Participant to the santa group
 const handleAddParticipant = () => {
@@ -31,6 +33,10 @@ const handleSanta = () => {
     setMessage("🎁 Secret Santas assigned!");
     const santasAssigned = assignSantas([...participants]);
     setAssignments(santasAssigned);
+    confetti({
+      particleCount: 150,
+      spread: 60
+   });
   } else {
     setMessage('❌ Number of participants must be at least two for Secret Santa!');
   }
@@ -38,6 +44,10 @@ const handleSanta = () => {
 // Handle user's name 
 const handleSubmitUsername = () => {
     if (temporaryUsername.trim() !== '') {
+      const currentDate = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+      const formattedTimestamp = currentDate.toLocaleDateString('en-US', options);
+      setTimestamp(formattedTimestamp);
       setUsername(temporaryUsername);
       setTemporaryUsername('');
       setNumParticipants(numParticipants + 1); 
@@ -61,6 +71,7 @@ const handleSubmitUsername = () => {
 
   return (
     <>
+      <div className='main-grid'>
       <div className='santa-box'>
         <div className='header'>
         <input
@@ -104,28 +115,44 @@ const handleSubmitUsername = () => {
         )}
       </div>
 
-      {participants.length > 0 && (
-        <div className='users-box'>
-          <h2>{groupName} - Participants ({numParticipants})</h2>
+      <div className='users-box'>
+          <h2>{groupName}</h2>
+          <h3>({numParticipants}) Members</h3>
           <ul>
             {participants.map((participant, index) => (
               <li key={index}>{participant.emoji} {participant.name}</li>
             ))}
           </ul>
-        </div>
-      )}
+      </div>
+      </div>
 
 
     {assignments.length > 0 && (
       <div className='assignments-box'>
         <h2> Assignments</h2>
-        <ul>
-          {assignments.map((assignment, index) => (
-            <li key={index}>
-              {`${assignment.emoji} ${assignment.participant.name} is ${assignment.santa.name}'s Secret Santa`}
-            </li>
-          ))}
-        </ul>
+        <div className='grid'>
+          <div className='assigns'>
+            <ul>
+              {assignments.map((assignment, index) => (
+                <li key={index}>
+                  {`${assignment.emoji} ${assignment.participant.name} is ${assignment.santa.name}'s Secret Santa`}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='group-info'>
+            <h3>{groupName}</h3>
+            <p>
+              Partecipants: {numParticipants}
+            </p>
+            <p>
+              Created at: {timestamp}
+            </p>
+            <p>
+              Organizer: {username}
+            </p>
+          </div>
+        </div>
       </div>
     )}
         <div className='button-santa'>
