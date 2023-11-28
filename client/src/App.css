@@ -65,7 +65,18 @@ nav a{
   grid-template-columns: 70% 30%;
   max-width: 1120px;
   margin: 1em auto;
+  gap: 1em;
 }
+
+.single-grid{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1em;
+  max-width: 620px;
+  margin: 1em auto;
+
+}
+
 
 /* Santa.css */
 
@@ -295,15 +306,45 @@ nav a{
 
 /** Santa page */ 
 
+.intro-santa{
+  max-width: 620px;
+  margin: 2em auto;
+  line-height: 1.5;
+}
+
+.intro-santa p{
+  background-color: var(--grey);
+  padding: 1em;
+  margin: 1em auto;
+  border-radius: 1em;
+  box-shadow: 0x 3px 6px rgb(0, 0, 0, 0.15);
+  animation: intro .35s linear;
+}
+
+@keyframes intro {
+
+  0%{
+    scale: .5;
+    opacity: .3;
+  }
+
+  100%{
+    scale: 1;
+    opacity: 1;
+  }
+  
+}
+
 .santa-box {
   margin: 2em auto;
   width: calc(90% - 4em);
-  max-width: 720px;
+  max-width: 620px;
   padding: 5em 2em 1em 2em;
   border: 1px solid #ccc;
   border-radius: 1em;
   position: relative;
   overflow: hidden;
+  height: fit-content;
 }
 
 .santa-box .header{
@@ -327,13 +368,23 @@ nav a{
   background-color: var(--red);
   color: white;
   border-bottom: 2px solid white;
+  border-radius: 0;
 }
 
 .show-message {
   background-color: var(--grey);
   padding: 1em;
-  margin-bottom: 2em;
+  margin: 2em auto;
   animation: showMessage .5s linear;
+  width: calc(100% - 2em);
+  max-width: 400px;
+  position: relative;
+  border-radius: 1em;
+  box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.15);
+}
+
+.show-message .icon{
+  position: absolute;
 }
 
 @keyframes showMessage{
@@ -461,6 +512,20 @@ nav a{
   
 }
 
+.group-info{
+  padding: 1.25em;
+  position: relative;
+  margin: 1em auto;
+  height: fit-content;
+  width: calc(100% - 2.5em);
+  text-align: center;
+  
+}
+
+.group-info .date{
+  font-size: small;
+}
+
 .button-santa{
   width: fit-content;
   margin: 3em auto;
@@ -579,12 +644,10 @@ nav a{
 }
 
 .assignments-box{
-  margin: 2em auto;
+  margin: 1em auto 2em auto;
   max-width: calc(100% - 4em);
   width: fit-content;
   padding: 2em;
-  border: 1px solid #ccc;
-  border-radius: 1em;
   animation: usersBox .4s linear;
 }
 
@@ -593,9 +656,6 @@ nav a{
   grid-template-columns: auto auto;
 }
 
-.assignments-box .grid .group-info{
-  padding: 1.25em;
-}
 
 .assignments-box h2{
   text-align: center;
@@ -614,7 +674,7 @@ nav a{
 
 
 @media(max-width: 820px){
-  .main-grid, .assignments-box .grid{
+  .main-grid, .assignments-box .grid, .single-grid{
     grid-template-columns: auto;
   }
 
