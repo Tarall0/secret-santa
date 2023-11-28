@@ -5,19 +5,50 @@ import Snow from './Snow'
 export default function Header() {
   return (
     <>
-    <div className="santa">
-        <div className="circles"></div>
-    <div className="snow"></div>
-    <div className="hat">
-        <div className="hat-end"></div>
-    </div>
-    <div className="face">
-    <div className="eyes"></div>
-    <div className="mouth"></div>
-    </div>
-    <div className="dirty-overflow">
-    <div className="body"></div>
+    <div className="santa-container">
+      <div className="star">
+      </div>
+      <div className="star">
+      </div>
+      <div className="star">
+      </div>
+      <div className="star">
+      </div>
+      <div className="star">
+      </div>
+      <div className="star">
+      </div>
+      <div className="star">
+      </div>
+      <div className="star">
+      </div>
+      <div className="star">
+      </div>
+      <div className="santa">
+        <div className="hat">
+          <div className="end">
+          </div>
         </div>
+        <div className="face">
+          <div className="eyes">
+            <div className="right-eye">
+            </div>
+            <div className="left-eye">
+            </div>
+          </div>
+          <div className="mouth">
+          </div>
+          
+        </div>
+        <div className="body">
+          <div className="buttons">
+          </div>
+          <div className="buttons">
+          </div>
+        </div>
+        <div className="sack">
+        </div>
+      </div>
     </div>
 
     <h1 className='head'>Secret Santa</h1>

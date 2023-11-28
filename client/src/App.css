@@ -80,133 +80,202 @@ nav a{
 
 /* Santa.css */
 
-.santa {
+.santa-container{
   background:#5c069a;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 100%;
+  margin: 6em auto 1em auto;
   position: relative;
-  margin: 6em auto 2em auto;
+  overflow: hidden;
 }
 
-.santa .snow {
+.santa-container .star{
   width: 2px;
   height: 2px;
   background: white;
-  border-radius: 50%;
+  border-radius: 100%;
   position: absolute;
   left: 18px;
-  top: 44px;
+  top: 25px;
+  animation: stars 1s infinite alternate;
 }
 
-
-.santa .snow:after {
-  width: 6px;
-  height: 6px;
-  content: "";
-  display: inline-block;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  top: -14px;
-  left: 0px;
+@keyframes stars{
+  0%{
+    opacity: .8;
+  }
+  
+  100%{
+    opacity: 1;
+  }
+}
+.santa-container .star:nth-child(1){
+  width: 5px;
+  height: 5px;
+  top: 36px;
+  left: 5px;
 }
 
-.santa .snow:before {
+.santa-container .star:nth-child(3){
+  width: 3px;
+  height: 3px;
+  top: 20px;
+  left: 30px;
+}
+
+.santa-container .star:nth-child(4){
   width: 4px;
   height: 4px;
-  content: "";
-  display: inline-block;
-  background: white;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -12px;
-  left: -11px;
+  top: 6px;
+  left: 40px;
+}
+
+.santa-container .star:nth-child(5){
+  width: 2px;
+  height: 2px;
+  top: 12px;
+  left: 60px;
+}
+
+.santa-container .star:nth-child(5){
+  width: 2px;
+  height: 2px;
+  top: 48px;
+  left: 25px;
+}
+
+.santa-container .star:nth-child(6){
+  width: 3px;
+  height: 3px;
+  top: 68px;
+  left: 13px;
+}
+
+.santa-container .star:nth-child(7){
+  width: 3px;
+  height: 3px;
+  top: 75px;
+  left: 85px;
+}
+
+.santa-container .star:nth-child(8){
+  width: 2px;
+  height: 2px;
+  top: 15px;
+  left: 80px;
+}
+.santa-container .star:nth-child(9){
+  width: 4px;
+  height: 4px;
+  top: 25px;
+  left: 85px;
 }
 
 .santa .hat {
-  width: 64px;
-  height: 31px;
+  width: 46px;
+  height: 21px;
   border-radius: 200px 200px 0 0;
   background: #d42834;
   margin: 0 auto;
-  top: -11px;
+  top: 11px;
   position: relative;
-  left: 5px;
+  left: 4px;
   z-index:20;
 }
 
 .santa .hat:after {
-  width: 60px;
-  height: 15px;
+  width: 46px;
+  height: 5px;
   border-radius: 20px;
   content: "";
   display: block;
   background: white;
   position: relative;
-  top: 22px;
-  left: -3px;
+  top: 21px;
+  left: -4px;
+}
+
+.santa .hat .end {
+  width: 13px;
+  height: 25px;
+  background: #d42834;
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  top: 12px;
+  border-radius: 0px 11px 0px 0px;
+}
+
+.santa .hat .end:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: white;
+  content: "";
+  display: inline-block;
+  top: 20px;
+  position: absolute;
+  left: 5px;
 }
 
 .santa .face {
-  width: 54px;
-  height: 57px;
+  width: 40px;
+  height: 43px;
   background: white;
   border-radius: 0px 0px 50px 50px;
   margin: 0 auto;
   position: relative;
   z-index: 20;
-  top: -6px;
+  top: 15px;
+ 
 }
 
 .santa .face .eyes {
   background:#f1ddd5;
-  width:45px;
-  height:15px;
+  width: 35px;
+  height: 12px;
   margin:0 auto;
   position:relative;
-  left:-1px;
+  left: 0px;
   text-align: center;
-  top:4px;
+  top:1px;
   padding-top: 0px;
 }
 
-.santa .face .eyes:after, .righteye {
-  width: 8px;
-  height: 6px;
+.eyes .right-eye, .eyes .left-eye {
+  width: 6px;
+  height: 4px;
   background: transparent;
   box-shadow: 0px -2px #793623;
-  content: "";
   display:inline-block;
   margin:0 auto;
   border-radius: 50%;
+  top: 4px;
+  position: absolute;
 }
 
-.santa .face .eyes:before, .lefteye {
-  width: 8px;
-  height: 6px;
-  background: transparent;
-  box-shadow: 0px -2px #793623;
-  content: "";
-  display:inline-block;
-  margin:0 auto;
-  border-radius: 50%;
-  margin-right:5px;
+.eyes .right-eye{
+  right: 8px;
 }
 
-.santa .mouth {
-  background:#a31f2b;
-  border-radius:50%;
-  width:6px;
-  height:6px;
-  position:absolute;
-  bottom:20px;
-  right:17px;
+.eyes .left-eye{
+  left: 8px;
+}
+
+.santa .face .mouth {
+  background: #a31f2b;
+  border-radius: 100%;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  bottom: 20px;
+  left: 13px;
 }
 
 .santa .body {
-  width: 93px;
-  height: 84px;
+  width: 57px;
+  height: 54px;
   background: #d42834;
   border-radius: 90px 90px 0px 0px;
   position: absolute;
@@ -215,93 +284,33 @@ nav a{
   left: 0;
   margin: 0 auto;
   text-align:center;
-  z-index:10;
+  z-index:1;
 }
 
-.santa .body:after {
+.santa .body .buttons{
+  background: yellow;
+  border-radius: 100%;
   width: 5px;
   height: 5px;
-  background: white;
-  border-radius: 50%;
-  display: inline-block;
   position: absolute;
-  top: 68px;
-  z-index: 50;
-  content: "";
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.santa .body:before {
-  width: 5px;
-  height: 5px;
-  background: white;
-  border-radius: 50%;
-  display: inline-block;
-  position: absolute;
-  top: 55px;
-  z-index: 50;
-  content: "";
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+.santa .body .buttons:nth-child(1){
+  top: 52px;
 }
 
-.santa .hat .hat-end {
-  width: 13px;
-  height: 32px;
-  content: "";
-  background: #d42834;
-  display: inline-block;
-  position: absolute;
-  right: 0px;
-  top: 15px;
-  border-radius: 0px 11px 0px 0px;
-}
-
-.santa .hat .hat-end:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: white;
-  content: "";
-  display: inline-block;
-  top: 30px;
-  position: absolute;
-  left: 0px;
-  z-index: 11;
-}
-
-.circles {
+.sack {
   background: #a31f2b;
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
+  height: 40px;
+  width: 45px;
+  border-radius: 100%;
   z-index: 9;
   position: absolute;
-  right: -6px;
-  top: 12px;
-}
-
-.circles:after {
-  background:white;
-  width:40px;
-  height:40px;
-  right:0;
-  top:50px;
-  content:"";
-  border-radius:50%;
-}
-
-.dirty-overflow {
-  overflow: hidden;
-  width: 120px;
-  height: 76px;
-  border-radius: 0px 0px 105px 105px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  right: 8px;
+  top: 30px;
 }
 
 /** Santa page */ 

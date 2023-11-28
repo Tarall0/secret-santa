@@ -97,9 +97,6 @@ const handleSubmitUsername = () => {
             
           
               <>
-              <div className="hat">
-                    <div className="hat-end"></div>
-              </div>
               <button onClick={handleShow}>Start Santa
                   <span className='snow'></span>
                   <span className='snow'></span>
@@ -194,9 +191,6 @@ const handleSubmitUsername = () => {
             
               {numParticipants >= 1 && (
                 <>
-                <div className="hat">
-                      <div className="hat-end"></div>
-                </div>
                 <button onClick={handleSanta}>Assign Santas
                     <span className='snow'></span>
                     <span className='snow'></span>
