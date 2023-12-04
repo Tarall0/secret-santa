@@ -41,6 +41,11 @@ export default function Header() {
           
         </div>
         <div className="body">
+          <div className='arm'>
+
+          </div>
+          <div className="buttons">
+          </div>
           <div className="buttons">
           </div>
           <div className="buttons">
