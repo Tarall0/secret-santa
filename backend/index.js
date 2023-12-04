@@ -13,8 +13,8 @@ const sendEmail = async (to, subject, body) => {
             port: 587,
             secure: false,
             auth: {
-                user: 'email',
-                pass: 'passwordl'
+                user: process.env.email,
+                pass: process.env.password
             }
 
         })
